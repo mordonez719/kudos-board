@@ -1,0 +1,7 @@
+.board-list{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

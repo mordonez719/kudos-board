@@ -1,0 +1,7 @@
+.menu-buttons{
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* width: 25%; */
+}
