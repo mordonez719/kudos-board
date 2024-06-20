@@ -70,12 +70,10 @@ function AllBoards() {
       console.error('Error fetching board:', error);
   });
   }
-
-  
     return (
         <>
             <div className='board-list'>
-                <button onClick={handleCreateBoard}>Create</button>
+                {/* <button onClick={handleCreateBoard}>Create</button> */}
                 <AddBoard></AddBoard>
                 {boardCards}
                 <Board img="/Users/mordonezcampos/Desktop/codepath/flixster-starter/public/movie.png" title="My Test Board" desc="This is a test board" author="Me"></Board>

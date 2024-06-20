@@ -5,6 +5,7 @@ import './AddBoard.css'
 
 function AddBoard() {
     const [buttonPopup, setButtonPopup] = useState(false);
+    const [formData, setFormData] = useState();
 
     return (
         <>
@@ -13,7 +14,10 @@ function AddBoard() {
                     <p className="board-title">New Board</p>
                     <p className="board-description">Click to create a new board</p>
                     <p className="board-author">You</p>
-                    <NewBoard trigger={buttonPopup} setTrigger={setButtonPopup}></NewBoard>
+                    <NewBoard setting={setFormData} trigger={buttonPopup} setTrigger={setButtonPopup}></NewBoard>
+                    {/* {(formData) ? console.log("yeah"):""} */}
+                    {/* {setFormData()} */}
+                    {/* {console.log(formData.get("btitle"))} */}
             </div>
         </>
     );
