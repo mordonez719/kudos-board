@@ -1,0 +1,21 @@
+.boardtitle {
+    font-size: large;
+    padding: 1px;
+    margin-bottom: 2px;
+    font-family: Courier New;
+    font-weight: 600;
+}
+.boardcategory{
+    color: gray;
+    margin: 12px;   
+}
+.boardauthor {
+    color: gray;
+    margin: 12px;   
+}
+.boardmodal {
+    border-radius: 10px; /* sets the radius of the rounded corners */
+  border: 2px solid teal; /* sets the border to be 2 pixels wide and teal in color */
+  display: inline-block;
+  align-items: center;
+}

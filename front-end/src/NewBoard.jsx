@@ -4,14 +4,13 @@ function NewBoard(props){
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        
         const form = event.target;
         const formData = new FormData(form);
-
+        
         props.setting(formData);
         console.log(formData.get("btitle"));
         console.log(Array.from(formData.entries()));
-    
             // console.log("handling")
             fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards`,
               {

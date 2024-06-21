@@ -1,6 +1,7 @@
 import './Board.css'
 // import { useEffect, useState } from 'react'
 // import BoardDetails from './BoardDetails';
+import { Link } from 'react-router-dom'
 
 function Board(props) {
     // const [detailPopup, setDetailPopup] = useState(false);
@@ -27,7 +28,9 @@ function Board(props) {
                     <p className="board-description">{props.desc}</p>
                     <p className="board-author">{props.author}</p>
                     {/* <BoardDetails author={props.author} img={props.img} title={props.title} desc={props.desc} trigger={buttonPopup} setTrigger={setButtonPopup}></BoardDetails> */}
-                    {/* <button onClick={() => setButtonPopup(true)}>View</button> */}
+                    <Link to={`/details/${props.id}`}>
+                        <button id={props.id}>View</button>
+                    </Link>
                     <button onClick={() => handleDelete()}>Delete</button>
             </div>
         </>

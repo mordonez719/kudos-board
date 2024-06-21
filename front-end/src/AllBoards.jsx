@@ -76,7 +76,7 @@ function AllBoards() {
                 {/* <button onClick={handleCreateBoard}>Create</button> */}
                 <AddBoard></AddBoard>
                 {boardCards}
-                <Board img="/Users/mordonezcampos/Desktop/codepath/flixster-starter/public/movie.png" title="My Test Board" desc="This is a test board" author="Me"></Board>
+                {/* <Board img="/Users/mordonezcampos/Desktop/codepath/flixster-starter/public/movie.png" title="My Test Board" desc="This is a test board" author="Me"></Board> */}
             </div>
         </>
     );
