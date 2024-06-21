@@ -32,9 +32,9 @@ function AllBoards(props) {
     });
   };
 
-  const boardCards = boards.map(board => {
+  const boardCards = boards.map((board,i) => {
     return (
-      <Board id={board.id} category={board.category} img={board.img} title={board.title} author={board.author} desc={board.description}/>
+      <Board key = {i} id={board.id} category={board.category} img={board.img} title={board.title} author={board.author} desc={board.description}/>
     )
   })
 

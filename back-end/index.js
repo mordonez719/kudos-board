@@ -14,15 +14,15 @@ app.get('/boards', async (req, res) => {
     res.json(boards);
 });
 
-// app.get('/boards/filter/:category', async (req, res) => {
-//     const { category } = req.params
+app.get('/boards/filter/:category', async (req, res) => {
+    const { category } = req.params
     
-//     const boards = await prisma.board.findMany(
-//     {
-//         where: { category: category },
-//     });
-//     res.status(200).json(boards);
-// });
+    const boards = await prisma.board.findMany(
+    {
+        where: { category: category },
+    });
+    res.status(200).json(boards);
+});
 
 
 app.get('/boards/:id', async (req, res) => {

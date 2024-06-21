@@ -1,31 +1,33 @@
-import './Menu.css'
-import { useEffect, useState } from 'react'
+import './Menu.css';
+import { useEffect, useState } from 'react';
 import Search from './Search';
-
-function Menu(props) {
+function Menu({ setFilter }) {
+    console.log("menu loaded");
+    function handleAll() {
+        console.log("pressed all");
+        setFilter("");
+    }
     return (
         <>
-            <Search>
-            </Search>
+            <Search />
             <section className='menu-buttons'>
-                <button onClick={props.setFilter("")}>
+                <button onClick={handleAll}>
                     All
                 </button>
-                <button>
+                <button onClick={() => setFilter("")}>
                     Recent
                 </button>
-                <button>
+                <button onClick={() => setFilter("filter/Celebration")}>
                     Celebration
                 </button>
-                <button>
+                <button onClick={() => setFilter("filter/Thank You")}>
                     Thank You
                 </button>
-                <button>
+                <button onClick={() => setFilter("filter/Inspiration")}>
                     Inspiration
                 </button>
             </section>
         </>
     );
 }
-
 export default Menu;

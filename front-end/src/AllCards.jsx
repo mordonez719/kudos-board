@@ -27,9 +27,9 @@ function AllCards(props) {
     });
   };
 
-  const cards_data = cards.map(card => {
+  const cards_data = cards.map((card, i) => {
     return (
-      <Card id={card.id} votes={card.upvotes} img={card.img} author={card.author} message={card.message}/>
+      <Card key={i} id={card.id} votes={card.upvotes} img={card.img} author={card.author} message={card.message}/>
     )
   })
 
