@@ -1,51 +1,55 @@
-import './AllBoards.css'
+import './AllCards.css'
 import { useEffect, useState } from 'react'
-import Board from './Board';
-import AddBoard from './AddBoard';
+import Card from './Card';
+// import AddBoard from './AddBoard';
 
 
-function AllCards() {
+function AllCards(props) {
     const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetchBoards();
-  })
+    fetchCards();
+  });
 
-  const fetchBoards = () => {
-    fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards`)
+  const fetchCards = () => {
+    fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/${props.id}/cards`)
     .then(response => {
-      // console.log(response)
-
       if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     return response.json();
     })
     .then(data => {
-      // console.log("here")
-      // console.log(data);
-      setBoards(data);
+      setCards(data);
     })
     .catch(error => {
-      console.error('Error fetching board:', error);
+      console.error('Error fetching cards:', error);
     });
   };
 
-  const boardCards = boards.map(board => {
+//   console.log(cards);
+// //   console.log(cards[0]);
+//   console.log(props.id);
+
+//   const new_cards = cards.filter(card => card.boardId === props.id);
+
+//   console.log(new_cards);
+
+  const cards_data = cards.map(card => {
     return (
-      <Board id={board.id} category={board.category} img={board.img} title={board.title} author={board.author} desc={board.description}/>
+      <Card id={card.id} votes={card.upvotes} img={card.img} author={card.author} message={card.message}/>
     )
   })
 
 
     return (
         <>
-            <div className='board-list'>
-                <AddBoard></AddBoard>
-                {boardCards}
+            <div className='card-list'>
+                {/* <AddBoard></AddBoard> */}
+                {cards_data}
             </div>
         </>
     );
 }
 
-export default AllBoards;
+export default AllCards;

@@ -75,8 +75,28 @@ app.get('/cards', async (req, res) => {
     res.json(cards)
 });
 
+app.get('/cards/:id', async (req, res) => {
+    const { id } = req.params
+    const cards = await prisma.card.findUnique(
+        {
+            where: { id: parseInt(id) },
+        });
+        res.status(200).json(cards);
+    });
+
+app.get('/boards/:id/cards', async (req, res) => {
+    const { id } = req.params
+
+    const board_cards = await prisma.card.findMany({
+        where: {
+            boardId: parseInt(id),
+        },
+    });
+    res.json(board_cards)
+}); 
+
 app.post('/boards/cards', async (req, res) => {
-    const {id, message, img, author, boardId} = req.body;
+    const {id, message, img, author, upvotes, boardId} = req.body;
     const newCard = await prisma.card.create({
         data: {
             id,
@@ -89,6 +109,15 @@ app.post('/boards/cards', async (req, res) => {
     res.status(201).json(newCard)
 });
 
+app.delete('/cards/:id', async (req, res) => {
+    const { id } = req.params
+
+    const deletedCard = await prisma.card.delete({
+        where: { id: parseInt(id) }
+    })
+    res.json(deletedCard)
+});
+
 const server = app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost;${PORT}`)
+    console.log(`Server is running on http://localhost:${PORT}`)
 });

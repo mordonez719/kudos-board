@@ -1,15 +1,15 @@
-.boardtitle {
+.boardtitle, .sa {
     font-size: large;
     padding: 1px;
     margin-bottom: 2px;
     font-family: Courier New;
     font-weight: 600;
 }
-.boardcategory{
+.boardcategory, .sss{
     color: gray;
     margin: 12px;   
 }
-.boardauthor {
+.boardauthor, .sd {
     color: gray;
     margin: 12px;   
 }
