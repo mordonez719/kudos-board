@@ -1,11 +1,13 @@
 {
   "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "prisma": "^5.15.1"
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
     "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "react-router-dom": "^5.3.4"
   },
   "name": "back-end",
   "version": "1.0.0",
