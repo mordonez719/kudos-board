@@ -18,5 +18,16 @@ model Board {
   img String
   title String
   author String
+  category String
   description String
+  cards Card[]
+}
+
+model Card {
+  id Int @id @default(autoincrement())
+  message String
+  img String
+  author String
+  boardId Int
+  board Board? @relation(fields: [boardId], references: [id])
 }

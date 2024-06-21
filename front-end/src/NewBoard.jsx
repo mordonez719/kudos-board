@@ -3,8 +3,6 @@ import './NewBoard.css'
 function NewBoard(props){
 
     const handleSubmit = (event) => {
-
-        console.log('submitting')
         event.preventDefault();
 
         const form = event.target;
@@ -25,6 +23,7 @@ function NewBoard(props){
                   img: "https://picsum.photos/200/300?random=3",
                   title: formData.get("btitle"),
                   author: formData.get("author"),
+                  category: formData.get("cat"),
                   description: formData.get("desc")
                 }),
                 }
