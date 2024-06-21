@@ -13,30 +13,17 @@ app.get('/boards', async (req, res) => {
     const boards = await prisma.board.findMany()
     res.json(boards);
 });
-// app.get("/boards", async (req, res) => {
-//     let query = 'SELECT * FROM boards'
-//     const queryParams = []
-//     const conditions = []
 
-//     if (req.query.category){
-//         queryParams.push(req.query.category)
-//         conditions.push(`genre=$${queryParams.length}`)
-//     }
-
-//     if (conditions.length > 0) {
-//         query += ' WHERE ' + conditions.join(' AND ')
-//     }
-
-//     try {
-//         const { rows } = await db.query(query, queryParams)
-//         res.json(rows)
-//     } catch (error) {
-//         console.error(error)
-//         res.status(500).send('Server Error')
-//     }
-//     // const boards = await prisma.board.findMany()
-//     // res.status(200).json(boards);
+// app.get('/boards/filter/:category', async (req, res) => {
+//     const { category } = req.params
+    
+//     const boards = await prisma.board.findMany(
+//     {
+//         where: { category: category },
+//     });
+//     res.status(200).json(boards);
 // });
+
 
 app.get('/boards/:id', async (req, res) => {
         const { id } = req.params

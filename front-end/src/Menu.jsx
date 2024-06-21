@@ -2,13 +2,13 @@ import './Menu.css'
 import { useEffect, useState } from 'react'
 import Search from './Search';
 
-function Menu() {
+function Menu(props) {
     return (
         <>
             <Search>
             </Search>
             <section className='menu-buttons'>
-                <button>
+                <button onClick={props.setFilter("")}>
                     All
                 </button>
                 <button>

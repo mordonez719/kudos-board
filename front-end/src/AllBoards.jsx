@@ -4,7 +4,7 @@ import Board from './Board';
 import AddBoard from './AddBoard';
 
 
-function AllBoards() {
+function AllBoards(props) {
     // const [buttonPopup, setButtonPopup] = useState(false);
     const [boards, setBoards] = useState([]);
 
@@ -13,7 +13,7 @@ function AllBoards() {
   })
 
   const fetchBoards = () => {
-    fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards`)
+    fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/${props.filter}`)
     .then(response => {
       // console.log(response)
 

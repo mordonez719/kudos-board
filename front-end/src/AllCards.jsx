@@ -1,7 +1,7 @@
 import './AllCards.css'
 import { useEffect, useState } from 'react'
 import Card from './Card';
-// import AddBoard from './AddBoard';
+import AddCard from './AddCard';
 
 
 function AllCards(props) {
@@ -27,14 +27,6 @@ function AllCards(props) {
     });
   };
 
-//   console.log(cards);
-// //   console.log(cards[0]);
-//   console.log(props.id);
-
-//   const new_cards = cards.filter(card => card.boardId === props.id);
-
-//   console.log(new_cards);
-
   const cards_data = cards.map(card => {
     return (
       <Card id={card.id} votes={card.upvotes} img={card.img} author={card.author} message={card.message}/>
@@ -45,7 +37,7 @@ function AllCards(props) {
     return (
         <>
             <div className='card-list'>
-                {/* <AddBoard></AddBoard> */}
+                <AddCard boardId={props.id}></AddCard>
                 {cards_data}
             </div>
         </>

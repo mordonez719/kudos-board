@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import BoardPage from './Pages/BoardPage.jsx';
 
 function App() {
+  const [filter, setFilter] = useState("");
 
   return (
     <Router>
@@ -17,8 +18,9 @@ function App() {
       <main>
       <Switch>
         <Route exact path="/">
-          <Menu></Menu>
-          <AllBoards></AllBoards>
+          <Menu filter={filter} setFilter={setFilter}></Menu>
+          {console.log(filter)}
+          <AllBoards filter={filter}></AllBoards>
         </Route>
         <Route path="/details/:id">
           <BoardPage></BoardPage>
