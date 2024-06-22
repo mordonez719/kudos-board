@@ -1,12 +1,23 @@
 import './Search.css'
 import { useEffect, useState } from 'react'
 
-function Search() {
+function Search({setFilter}) {
+
+    function handleSearchChange(e){
+        if (e.target.value === ""){
+            setFilter("")
+        }
+        else{
+            setFilter(`query/${e.target.value}`)
+        }
+    }
 
     return (
         <div className='input-wrapper'>
             <input type="text"
-            placeholder="Search boards..." />
+            placeholder="Search boards..." 
+            onChange={(e) => handleSearchChange(e)}
+            />
         </div>
     )
 }

@@ -9,12 +9,12 @@ function Menu({ setFilter }) {
     }
     return (
         <>
-            <Search />
+            <Search setFilter={ setFilter } />
             <section className='menu-buttons'>
                 <button onClick={handleAll}>
                     All
                 </button>
-                <button onClick={() => setFilter("")}>
+                <button onClick={() => setFilter("recent")}>
                     Recent
                 </button>
                 <button onClick={() => setFilter("filter/Celebration")}>

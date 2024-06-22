@@ -28,7 +28,7 @@ model Card {
   message String
   img String
   author String @default("anonymous")
-  upvotes Int @default(0)
+  upvotes Boolean @default(false)
   boardId Int
   board Board? @relation(fields: [boardId], references: [id])
 }

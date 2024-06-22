@@ -18,6 +18,20 @@ function Card(props) {
             )
     }
 
+    function handleUpvote(){
+        fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/cards/${props.id}`,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    "upvotes": !(props.votes)
+                  }),
+                }
+            )
+    }
+
     return (
         <>
             <div className='Card' id={props.id}>
@@ -25,6 +39,9 @@ function Card(props) {
                     <p className="card-message">{props.message}</p>
                     <p className="card-author">{props.author}</p>
                     <p className='card-votes'>{props.votes}</p>
+                    <button onClick={() => handleUpvote()}>
+                        {props.votes ? `Upvoted` : `Upvote`}
+                    </button>
                     <button onClick={() => handleDelete()}>Delete</button>
             </div>
         </>

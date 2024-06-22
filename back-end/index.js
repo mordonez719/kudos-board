@@ -24,6 +24,12 @@ app.get('/boards/filter/:category', async (req, res) => {
     res.status(200).json(boards);
 });
 
+app.get('/boards/recent', async (req, res) => {
+    const boards = await prisma.board.findMany()
+    boards.sort((a, b) => b.id - a.id);
+    res.json(boards);
+});
+
 
 app.get('/boards/:id', async (req, res) => {
         const { id } = req.params
@@ -33,6 +39,17 @@ app.get('/boards/:id', async (req, res) => {
         });
         res.status(200).json(boards);
     });
+
+app.get('/boards/query/:query', async (req, res) => {
+    const { query } = req.params
+    const boards = await prisma.board.findMany({
+        where: { title: {
+            contains: query,
+            mode: 'insensitive'
+        }}
+    });
+    res.status(200).json(boards);
+});
 
 app.post('/boards', async (req, res) => {
     const { img, title, author, description, category } = req.body;
@@ -70,6 +87,18 @@ app.get('/cards/:id', async (req, res) => {
         });
         res.status(200).json(cards);
     });
+
+app.put('/cards/:id', async (req, res) => {
+        const { id } = req.params
+        const { upvotes } = req.body
+        const updatedCard = await prisma.card.update({
+          where: { id: parseInt(id) },
+          data: {
+            upvotes
+          }
+        })
+        res.json(updatedCard)
+});
 
 app.get('/boards/:id/cards', async (req, res) => {
     const { id } = req.params

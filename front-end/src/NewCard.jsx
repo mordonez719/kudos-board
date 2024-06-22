@@ -1,4 +1,5 @@
 import './NewCard.css'
+const apiKey = "7PylsrqSXgSB7ztDg62NL68CvfGZyA4u"
 
 function NewCard(props){
     // console.log(props.boardId);
@@ -30,6 +31,27 @@ function NewCard(props){
             )
     }
 
+    const handleSearch = async (event) => {
+        const gifQuery = event.target.value;
+        setSearchGif(gifQuery);
+        if (!gifQuery.trim()) return;
+        const params = new URLSearchParams({
+            api_key: apiKey,
+            query: gifQuery,
+            limit: 25
+        });
+        try {
+            const response = await fetch(`https://api.giphy.com/v1/gifs/search?${params.toString()}`);
+            const data  = await response.json();
+            if (data.data.length > 0) {
+                setImgURL(data.data[0].images.original.url);
+            }
+        }
+        catch (error) {
+            console.error("Error searching for GIFs:")
+        }
+    }
+
     return (props.trigger) ? ( 
         <section id='form-container'>
             <div id='new-board-form'>
@@ -43,7 +65,7 @@ function NewCard(props){
                     <input type="text" id="btitle" name="btitle"/>
                         <br/><br/>
                     <label for="img">Image: </label>
-                    <input type="text" id="img" name="img"/><br/><br/>
+                    <input type="text" id="img" name="img" onChange={handleSearch}/><br/><br/>
                     <label for="author">Author (optional): </label>
                     <input type="text" id="author" name="author"/><br/><br/>
                     <input type="submit" value="Submit"/>
