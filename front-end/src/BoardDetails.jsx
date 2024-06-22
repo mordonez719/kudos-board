@@ -47,9 +47,12 @@ function BoardDetails(props){
                         <div id="author">
                             {props.author}
                         </div>
-                        <div id="overview">
-                            {props.desc}
+                        <div id="category">
+                            {props.category}
                         </div>
+                        {/* <div id="overview">
+                            {props.desc}
+                        </div> */}
                     </div>
                 </section>
                  {props.children}

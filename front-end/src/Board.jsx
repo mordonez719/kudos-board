@@ -25,8 +25,8 @@ function Board(props) {
             <div className='board' id={props.id}>
                     <img className="board-image" src={props.img}></img>
                     <p className="board-title">{props.title}</p>
-                    <p className="board-description">{props.desc}</p>
-                    <p className="board-author">{props.author}</p>
+                    {/* <p className="board-description">{props.desc}</p> */}
+                    {/* <p className="board-author">{props.author}</p> */}
                     {/* <BoardDetails author={props.author} img={props.img} title={props.title} desc={props.desc} trigger={buttonPopup} setTrigger={setButtonPopup}></BoardDetails> */}
                     <Link to={`/details/${props.id}`}>
                         <button id={props.id}>View</button>

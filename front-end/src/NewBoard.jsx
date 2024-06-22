@@ -23,7 +23,7 @@ function NewBoard(props){
                   title: formData.get("btitle"),
                   author: formData.get("author"),
                   category: formData.get("cat"),
-                  description: formData.get("desc")
+                  description: "no description"
                 }),
                 }
             )
@@ -41,13 +41,13 @@ function NewBoard(props){
                     <label for="btitle">Title: </label>
                     <input type="text" id="btitle" name="btitle"/>
                         <br/><br/>
-                    <label for="desc">Description: </label>
-                    <input type="text" id="desc" name="desc"/><br/><br/>
+                    {/* <label for="desc">Description: </label>
+                    <input type="text" id="desc" name="desc"/><br/><br/> */}
                     <label for="cat">Category: </label>
                     <input type="text" id="cat" name="cat"/>
                         <br/><br/>
-                    <label for="img">Image: </label>
-                    <input type="text" id="img" name="img"/><br/><br/>
+                    {/* <label for="img">Image: </label>
+                    <input type="text" id="img" name="img"/><br/><br/> */}
                     <label for="author">Author (optional): </label>
                     <input type="text" id="author" name="author"/><br/><br/>
                     <input type="submit" value="Submit"/>
