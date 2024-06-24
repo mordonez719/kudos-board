@@ -1,3 +1,13 @@
+/*
+
+AddBoard
+
+Board model for button to create a new board
+Called in AllBoards
+Calls NewBoard
+
+*/
+
 import { useEffect, useState } from 'react'
 import NewBoard from './NewBoard'
 import './AddBoard.css'

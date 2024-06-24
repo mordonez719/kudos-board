@@ -1,8 +1,18 @@
+/*
+
+Board
+
+Model for preview displays on initial page load
+Called in AllBoards
+Links to details page on click
+
+*/
+
 import './Board.css'
 import { Link } from 'react-router-dom'
 
-function Board(props) {
-    const handleDelete = () => {
+function Board(props) { 
+    const handleDelete = () => { // deletes a Board with the given ID
 
         fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/${props.id}`,
               {

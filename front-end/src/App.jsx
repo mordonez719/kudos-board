@@ -1,3 +1,12 @@
+/*
+
+App
+
+Establishes routes from main bage to details page
+Calls Menu, AllBoards, BoardPage
+
+*/
+
 import { useEffect, useState } from 'react';
 import './App.css';
 import Menu from './Menu';

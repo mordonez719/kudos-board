@@ -1,3 +1,14 @@
+/*
+
+BoardPage
+
+Displays details of selected board
+Linked from Board
+Called in App
+Calls AllCards
+
+*/
+
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
@@ -12,7 +23,8 @@ function BoardPage() {
         fetchBoard();
     }, []);
 
-  const fetchBoard = () => {
+
+  const fetchBoard = () => { // fetched board details for selected board given unique ID
     fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/${id}`)
     .then(response => {
       if (!response.ok) {
@@ -28,7 +40,7 @@ function BoardPage() {
     });
   };
 
-    return (
+    return ( // displays details
         <div className="boardmodal">
         <Link to="/">
             <button>Back</button>

@@ -1,3 +1,13 @@
+/*
+
+AddCard
+
+Card model for button to create a new card
+Called in AllCards
+Calls NewCard
+
+*/
+
 import { useEffect, useState } from 'react'
 import NewCard from './NewCard'
 import './AddCard.css'

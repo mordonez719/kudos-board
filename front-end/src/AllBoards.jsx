@@ -1,3 +1,13 @@
+/*
+
+AllBoards
+
+Grid for AddBoard button and Board displays
+Called in App
+Calls AddBoard, Board
+
+*/
+
 import './AllBoards.css'
 import { useEffect, useState } from 'react'
 import Board from './Board';
@@ -11,7 +21,7 @@ function AllBoards(props) {
     fetchBoards();
   })
 
-  const fetchBoards = () => {
+  const fetchBoards = () => { // fetches all the boards data for the given filter
     fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/${props.filter}`)
     .then(response => {
 
@@ -28,6 +38,7 @@ function AllBoards(props) {
     });
   };
 
+  // creates a Board for each data point
   const boardCards = boards.map((board,i) => {
     return (
       <Board key={i} id={board.id} category={board.category} img={board.img} title={board.title} author={board.author} desc={board.description}/>

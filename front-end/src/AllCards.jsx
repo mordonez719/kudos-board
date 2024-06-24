@@ -1,3 +1,13 @@
+/*
+
+AllCards
+
+Grid for AddCard button and Card displays
+Called in BoardPage
+Calls AddCard, Card
+
+*/
+
 import './AllCards.css'
 import { useEffect, useState } from 'react'
 import Card from './Card';
@@ -11,7 +21,7 @@ function AllCards(props) {
     fetchCards();
   });
 
-  const fetchCards = () => {
+  const fetchCards = () => { // fetches all cards for the board with the given ID
     fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/${props.id}/cards`)
     .then(response => {
       if (!response.ok) {
@@ -27,6 +37,7 @@ function AllCards(props) {
     });
   };
 
+  // creates a Card for each data point
   const cards_data = cards.map((card, i) => {
     return (
       <Card key={i} id={card.id} votes={card.upvotes} img={card.img} author={card.author} message={card.message}/>
