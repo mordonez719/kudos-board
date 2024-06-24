@@ -1,18 +1,25 @@
+/*
+
+NewCard
+
+Displays form for creating a new Card and posts input to the database within its Board on submit
+Called in AddCard
+
+*/
+
 import './NewCard.css'
 const apiKey = "7PylsrqSXgSB7ztDg62NL68CvfGZyA4u"
 
 function NewCard(props){
 
     const handleSubmit = (event) => {
-        console.log("submitting new card")
         event.preventDefault();
         
         const form = event.target;
         const formData = new FormData(form);
         
         props.setting(formData);
-        console.log(Array.from(formData.entries()));
-            fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/cards`,
+            fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/cards`, // posts new card to the database
               {
                 method: "POST",
                 headers: {
@@ -28,7 +35,7 @@ function NewCard(props){
             )
     }
 
-    const handleSearch = async (event) => {
+    const handleSearch = async (event) => { // finds GIF for Card display
         const gifQuery = event.target.value;
         setSearchGif(gifQuery);
         if (!gifQuery.trim()) return;

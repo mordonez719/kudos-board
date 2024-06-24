@@ -1,3 +1,12 @@
+/*
+
+NewBoard
+
+Displays form for creating a new Board and posts input to the database on submit
+Called in AddBoard
+
+*/
+
 import './NewBoard.css'
 
 function NewBoard(props){
@@ -9,9 +18,7 @@ function NewBoard(props){
         const formData = new FormData(form);
         
         props.setting(formData);
-        console.log(formData.get("btitle"));
-        console.log(Array.from(formData.entries()));
-            fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards`,
+            fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards`, // adds a board with the entered form input to the database
               {
                 method: "POST",
                 headers: {

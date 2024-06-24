@@ -1,9 +1,17 @@
+/*
+
+Menu
+
+Creates and handles buttons for filtering, setting the filter use variable on each click
+Called in App
+Calls Search
+
+*/
+
 import './Menu.css';
 import Search from './Search';
 function Menu({ setFilter }) {
-    console.log("menu loaded");
     function handleAll() {
-        console.log("pressed all");
         setFilter("");
     }
     return (

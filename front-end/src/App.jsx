@@ -15,7 +15,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BoardPage from './Pages/BoardPage.jsx';
 
 function App() {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState(""); // default filter is empty, fetching will get all boards
 
   return (
     <Router>

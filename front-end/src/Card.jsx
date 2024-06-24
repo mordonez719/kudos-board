@@ -1,8 +1,17 @@
+/*
+
+Card
+
+Model for card displays in a board
+Called in AllCards
+
+*/
+
 import './Card.css'
 
 function Card(props) {
 
-    const handleDelete = (event) => {
+    const handleDelete = (event) => { // deletes a card with the given ID
 
         fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/cards/${props.id}`,
               {
@@ -14,7 +23,7 @@ function Card(props) {
             )
     }
 
-    function handleUpvote(){
+    function handleUpvote(){ // changes upvote status of the card with the given ID
         fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/cards/${props.id}`,
               {
                 method: "PUT",

@@ -1,3 +1,12 @@
+/*
+
+Search
+
+Displays search bar that updates filter for board fetching on change
+Called in Menu
+
+*/
+
 import './Search.css'
 
 function Search({setFilter}) {
