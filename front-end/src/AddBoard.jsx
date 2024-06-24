@@ -15,9 +15,6 @@ function AddBoard() {
                     <p className="board-description">Click to create a new board</p>
                     <p className="board-author">You</p>
                     <NewBoard setting={setFormData} trigger={buttonPopup} setTrigger={setButtonPopup}></NewBoard>
-                    {/* {(formData) ? console.log("yeah"):""} */}
-                    {/* {setFormData()} */}
-                    {/* {console.log(formData.get("btitle"))} */}
             </div>
         </>
     );

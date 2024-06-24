@@ -1,5 +1,4 @@
 import './Menu.css';
-import { useEffect, useState } from 'react';
 import Search from './Search';
 function Menu({ setFilter }) {
     console.log("menu loaded");

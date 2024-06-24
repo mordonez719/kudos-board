@@ -1,12 +1,8 @@
 import './Card.css'
-// import { useEffect, useState } from 'react'
-// import BoardDetails from './BoardDetails';
-import { Link } from 'react-router-dom'
 
 function Card(props) {
 
     const handleDelete = (event) => {
-        // event.preventDefault();
 
         fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/cards/${props.id}`,
               {

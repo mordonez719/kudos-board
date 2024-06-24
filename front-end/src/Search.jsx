@@ -1,5 +1,4 @@
 import './Search.css'
-import { useEffect, useState } from 'react'
 
 function Search({setFilter}) {
 

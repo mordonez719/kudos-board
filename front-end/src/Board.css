@@ -4,7 +4,6 @@
     background-color: rgb(246, 249, 251);
     width: 300px;
     height: fit-content;
-    /* max-height: 400px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,22 +32,3 @@
     height: 80%;
 
 }
-
-/* .card-back:hover{
-    box-shadow: 3px 3px 10px 1px #5814a0;
-    animation-duration: 1s;
-    animation-name: growshrink;
-}
-
-@keyframes growshrink {
-    0%,
-    100% {
-      scale: 100%;
-      color: #5814a0;
-    }
-  
-    50% {
-      scale: 110%;
-      color: #5814a0;
-    }
-  } */

@@ -7,7 +7,6 @@
     width: 100%;
     height: 100%;
     background:rgba(0,0,0,0.25);
-    /* opacity: 2%; */
 
     display: flex;
     overflow: scroll;
@@ -22,7 +21,6 @@
     max-width: 640px;
     min-height: fit-content;
     background-color: #dbe3f8;
-    /* opacity: 100%; */
 
 }
 
@@ -50,10 +48,8 @@
 #overview{
     margin: 20px;
     margin-top: 15px;
-    /* margin-left: 15px; */
 }
 
 #basic-details{
     display: flex;
-    /* align-items:; */
 }

@@ -2,7 +2,6 @@ import './NewCard.css'
 const apiKey = "7PylsrqSXgSB7ztDg62NL68CvfGZyA4u"
 
 function NewCard(props){
-    // console.log(props.boardId);
 
     const handleSubmit = (event) => {
         console.log("submitting new card")
@@ -12,9 +11,7 @@ function NewCard(props){
         const formData = new FormData(form);
         
         props.setting(formData);
-        // console.log(formData.get("btitle"));
         console.log(Array.from(formData.entries()));
-            // console.log("handling")
             fetch(`${import.meta.env.VITE_BACKEND_ADDRESS}/boards/cards`,
               {
                 method: "POST",
