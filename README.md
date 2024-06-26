@@ -48,7 +48,7 @@ Deployed Application (optional): [Kudos Board Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-![Loom Video](https://www.loom.com/embed/fe911ed7fda04c4399f85d5d05130b65?sid=51a0c122-f976-482b-85d7-667a36dea11f)
+<div style="position: relative; padding-bottom: 71.83754993342211%; height: 0;"><iframe src="https://www.loom.com/embed/fe911ed7fda04c4399f85d5d05130b65?sid=2f6e2e89-1edb-4889-925c-d6a0208e3e92" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Reflection
 
