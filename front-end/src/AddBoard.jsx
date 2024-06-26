@@ -13,7 +13,7 @@ import NewBoard from './NewBoard'
 import './AddBoard.css'
 
 
-function AddBoard() {
+function AddBoard(props) {
     const [buttonPopup, setButtonPopup] = useState(false);
     const [formData, setFormData] = useState();
 
@@ -24,7 +24,7 @@ function AddBoard() {
                     <p className="board-title">New Board</p>
                     <p className="board-description">Click to create a new board</p>
                     <p className="board-author">You</p>
-                    <NewBoard setting={setFormData} trigger={buttonPopup} setTrigger={setButtonPopup}></NewBoard>
+                    <NewBoard count={props.count} setting={setFormData} trigger={buttonPopup} setTrigger={setButtonPopup}></NewBoard>
             </div>
         </>
     );

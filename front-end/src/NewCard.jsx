@@ -8,9 +8,12 @@ Called in AddCard
 */
 
 import './NewCard.css'
-const apiKey = "7PylsrqSXgSB7ztDg62NL68CvfGZyA4u"
+import { useState } from 'react';
 
 function NewCard(props){
+    const apiKey = "7PylsrqSXgSB7ztDg62NL68CvfGZyA4u"
+    const [searchGif, setSearchGif] = useState("");
+    const [ImgURL, setImgURL] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,7 +29,7 @@ function NewCard(props){
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                  img: "https://picsum.photos/200/300?random=3",
+                  img: ImgURL,
                   author: formData.get("author"),
                   message: formData.get("btitle"),
                   boardId: parseInt(props.boardId)
@@ -35,18 +38,21 @@ function NewCard(props){
             )
     }
 
-    const handleSearch = async (event) => { // finds GIF for Card display
+    const handleSearch = async (event) => {
+
         const gifQuery = event.target.value;
         setSearchGif(gifQuery);
         if (!gifQuery.trim()) return;
-        const params = new URLSearchParams({
-            api_key: apiKey,
-            query: gifQuery,
-            limit: 25
-        });
+        const api_key = apiKey
+        var query = gifQuery
         try {
-            const response = await fetch(`https://api.giphy.com/v1/gifs/search?${params.toString()}`);
+            console.log("hereee")
+            const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${query}&limit=6&offset=0&rating=g&lang=en`);
+            console.log("response: ")
+            console.log(response);
             const data  = await response.json();
+            console.log("data: ")
+            console.log(data);
             if (data.data.length > 0) {
                 setImgURL(data.data[0].images.original.url);
             }
@@ -54,6 +60,8 @@ function NewCard(props){
         catch (error) {
             console.error("Error searching for GIFs:")
         }
+        console.log("searching")
+        console.log(ImgURL)
     }
 
     return (props.trigger) ? ( 

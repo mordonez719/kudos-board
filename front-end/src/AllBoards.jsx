@@ -16,6 +16,7 @@ import AddBoard from './AddBoard';
 
 function AllBoards(props) {
     const [boards, setBoards] = useState([]);
+    let boardCount = 0;
 
   useEffect(() => {
     fetchBoards();
@@ -48,7 +49,7 @@ function AllBoards(props) {
     return (
         <>
             <div className='board-list'>
-                <AddBoard></AddBoard>
+                <AddBoard count={boardCount}></AddBoard>
                 {boardCards}
             </div>
         </>

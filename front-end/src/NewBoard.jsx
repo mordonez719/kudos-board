@@ -25,7 +25,7 @@ function NewBoard(props){
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                  img: "https://picsum.photos/200/300?random=3",
+                  img: `https://picsum.photos/200/300?random=3`,
                   title: formData.get("btitle"),
                   author: formData.get("author"),
                   category: formData.get("cat"),
@@ -33,6 +33,9 @@ function NewBoard(props){
                 }),
                 }
             )
+
+        props.count = props.count + 1;
+        // console.log(props.count);
     }
 
     return (props.trigger) ? ( 
